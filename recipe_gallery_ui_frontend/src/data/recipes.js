@@ -11,7 +11,8 @@ const recipes = [
     description: 'A healthy Chinese for all the family; quick and simple. Vegan friendly!',
     longDescription:
       'These stir-fried noodles are packed with colorful veggies and a savory sauce. Perfect for a weeknight dinner and friendly for plant-based diets.',
-    image: placeholderImg,
+    // Updated to a more representative noodle dish; shows noodles/vegetables/chopsticks
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop',
     alt: 'Stir-fried noodles with vegetables and chopsticks',
   },
   {
