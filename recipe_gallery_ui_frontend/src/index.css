@@ -11,8 +11,8 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #1A1F2B;
-  background: #0E1A1F;
+  color: var(--text-primary, #2A2F33);
+  background: var(--bg-canvas, #EDEDED);
 }
 
 a { color: inherit; }

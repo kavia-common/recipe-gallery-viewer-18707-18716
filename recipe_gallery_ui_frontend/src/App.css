@@ -1,52 +1,54 @@
-/* Ocean Professional — Global tokens and layout */
+/* Ocean Professional — Composite Style Guide Application */
+/* Tokens unified from assets/style_guide.md and references 3 & 4 */
 :root {
-  --ocean-deep: #0E1A1F;
-  --ocean-teal: #00BBC4;
-  --aqua-mist: #6FE6E6;
-  --seafoam: #CFF5F5;
-  --coral-rose: #FF738A;
-  --coral-rose-hover: #F55F7D;
-  --golden-sun: #FFC83D;
-  --warm-honey: #FFD74F;
-  --ink: #1A1F2B;
-  --slate: #5E6673;
-  --mist: #7B8594;
-  --white: #FFFFFF;
+  /* Layout & surfaces */
+  --bg-canvas: #EDEDED;
+  --surface: #FFFFFF;
+  --divider: #E0E4E8;
 
-  --bg-canvas: var(--ocean-deep);
+  /* Shadows */
+  --shadow: rgba(0,0,0,0.08);
+  --shadow-strong: rgba(0,0,0,0.18);
+
+  /* Text */
+  --text-primary: #2A2F33;
+  --text-secondary: #6E7781;
+  --text-muted: #8A9096;
+  --text-subtle: #A9B0B5;
+
+  /* Accents */
+  --accent-primary: #3AD06B; /* Feature card primary from Ref-3 */
+  --accent-like: #E85B64;    /* Heart/favorite */
+  --accent-cta: #FF6E86;     /* Poster card CTA from Ref-4 */
+  --accent-badge: #FFD764;   /* Favorite badge circle */
+  --star: #FFC44D;           /* Rating */
+
+  /* Ocean backdrop accent band (from ref blend) */
   --bg-accent-band: rgba(0, 190, 190, 0.55);
-
-  --surface-card: var(--white);
-  --text-primary: var(--ink);
-  --text-secondary: var(--slate);
-  --text-muted: var(--mist);
-  --accent: var(--ocean-teal);
-  --brand-primary: var(--coral-rose);
-  --brand-primary-hover: var(--coral-rose-hover);
-  --rating: var(--golden-sun);
-  --badge-favorite: var(--warm-honey);
-
-  --shadow-strong: rgba(0, 0, 0, 0.20);
-  --shadow-soft: rgba(0, 0, 0, 0.08);
 }
 
+/* Base resets */
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
 
 .ocean-app {
   min-height: 100%;
-  background: radial-gradient(1200px 700px at 20% 10%, rgba(0,0,0,0.25), transparent 60%), var(--bg-canvas);
+  background:
+    radial-gradient(1200px 700px at 20% 10%, rgba(0,0,0,0.04), transparent 60%),
+    var(--bg-canvas);
   position: relative;
   color: var(--text-primary);
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Diagonal accent band, subtle per references */
 .ocean-bg-accent {
   position: absolute;
   inset: 40% -20% -20% -20%;
   transform: rotate(-12deg);
   background: var(--bg-accent-band);
-  filter: blur(0.5px);
+  filter: blur(1px);
+  opacity: 0.45;
   z-index: 0;
 }
 
@@ -75,23 +77,23 @@ html, body, #root { height: 100%; }
   height: 28px;
   display: inline-grid;
   place-items: center;
-  background: #0e1a1f33;
-  color: #fff;
+  background: #ffffff;
+  color: var(--accent-like);
   border-radius: 8px;
-  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 .brand-title {
   margin: 0;
   font-weight: 700;
   font-size: 22px;
-  color: #E9F3F4;
+  color: #2A2F33;
   letter-spacing: 0.3px;
 }
 
 /* Footer */
 .ocean-footer {
   padding: 24px 0 40px;
-  color: #cfe3e6;
+  color: var(--text-subtle);
 }
 
 /* Main spacing */
@@ -100,7 +102,7 @@ html, body, #root { height: 100%; }
   padding-bottom: 40px;
 }
 
-/* Search bar */
+/* Search bar: light theme per style guide */
 .searchbar {
   display: flex;
   gap: 10px;
@@ -111,26 +113,26 @@ html, body, #root { height: 100%; }
 .searchbar input[type="search"] {
   flex: 1;
   height: 44px;
-  border-radius: 10px;
-  border: 1px solid #ffffff22;
-  background: rgba(255,255,255,0.08);
-  color: #eaf5f6;
+  border-radius: 12px;
+  border: 1px solid var(--divider);
+  background: #fff;
+  color: var(--text-primary);
   padding: 0 14px 0 42px;
   outline: none;
   transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
-  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23cfe3e6' stroke-width='1.6'%3E%3Ccircle cx='7.5' cy='7.5' r='5.9'/%3E%3Cpath d='M11.5 11.5 16.2 16.2'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%238A9096' stroke-width='1.6'%3E%3Ccircle cx='7.5' cy='7.5' r='5.9'/%3E%3Cpath d='M11.5 11.5 16.2 16.2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 18px 18px;
   background-position: 12px center;
 }
-.searchbar input::placeholder { color: #cfe3e6aa; }
+.searchbar input::placeholder { color: var(--text-subtle); }
 .searchbar input:focus {
-  border-color: var(--aqua-mist);
-  background: rgba(255,255,255,0.12);
+  border-color: #9BD9D9;
+  background: #fff;
   box-shadow: 0 0 0 2px rgba(111,230,230,0.25);
 }
 
-/* Filter pills */
+/* Filter pills: light pills with pressed state */
 .filter-pills {
   display: flex;
   flex-wrap: wrap;
@@ -141,9 +143,9 @@ html, body, #root { height: 100%; }
   padding: 8px 12px;
   height: 32px;
   border-radius: 999px;
-  border: 1px solid #ffffff22;
-  background: rgba(255,255,255,0.06);
-  color: #eaf5f6;
+  border: 1px solid var(--divider);
+  background: #fff;
+  color: var(--text-primary);
   font-size: 13px;
   line-height: 16px;
   cursor: pointer;
@@ -151,10 +153,10 @@ html, body, #root { height: 100%; }
 }
 .pill:hover { transform: translateY(-1px); }
 .pill[aria-pressed="true"] {
-  background: linear-gradient(180deg, rgba(207,245,245,0.22), rgba(207,245,245,0.10));
-  border-color: #cff5f5aa;
-  color: #0b1a1d;
-  box-shadow: inset 0 1px 0 #ffffff55, 0 6px 18px rgba(0,0,0,0.18);
+  background: linear-gradient(180deg, #FFFFFF, #F7FBFB);
+  border-color: #CFE7E7;
+  color: var(--text-primary);
+  box-shadow: inset 0 1px 0 #ffffff, 0 6px 18px rgba(0,0,0,0.06);
 }
 
 /* Gallery grid */
@@ -172,8 +174,8 @@ html, body, #root { height: 100%; }
   max-width: 400px;
   justify-self: center;
   border-radius: 12px;
-  background: var(--surface-card);
-  box-shadow: 0 12px 24px var(--shadow-strong), 0 2px 6px var(--shadow-soft);
+  background: var(--surface);
+  box-shadow: 0 18px 32px var(--shadow-strong), 0 2px 6px var(--shadow);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -182,7 +184,11 @@ html, body, #root { height: 100%; }
 }
 .recipe-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 28px rgba(0,0,0,0.22), 0 4px 10px rgba(0,0,0,0.10);
+  box-shadow: 0 20px 36px rgba(0,0,0,0.2), 0 4px 10px rgba(0,0,0,0.10);
+}
+.recipe-card:focus-visible {
+  outline: 2px solid #00BBC466;
+  outline-offset: 2px;
 }
 .recipe-card .media { position: relative; }
 .recipe-card img {
@@ -195,12 +201,12 @@ html, body, #root { height: 100%; }
   position: absolute;
   right: 16px;
   bottom: -16px;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border: 0;
   border-radius: 50%;
-  background: var(--badge-favorite);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+  background: var(--accent-badge);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -208,12 +214,13 @@ html, body, #root { height: 100%; }
 }
 .badge-fav:hover {
   transform: scale(1.04);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.22);
 }
 .badge-fav:focus-visible {
   outline: 2px solid #FF738A66;
   outline-offset: 2px;
 }
+
 .recipe-card .body { padding: 24px; }
 .recipe-card .title {
   margin: 0 0 12px 0;
@@ -229,7 +236,7 @@ html, body, #root { height: 100%; }
   align-items: center;
   gap: 12px;
   margin: 4px 0 10px 0;
-  color: var(--text-muted);
+  color: var(--text-subtle);
   font-weight: 500;
   font-size: 12.5px;
   line-height: 1.4;
@@ -243,45 +250,60 @@ html, body, #root { height: 100%; }
   color: var(--text-secondary);
   font-size: 14px;
   line-height: 1.58;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* as per Ref-4 summary clamp */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .actions { display: flex; justify-content: center; }
 
+/* CTA follows Ref-4 emphasis pink while keeping rounded pill per guide */
 .btn.primary {
   min-width: 136px;
   height: 40px;
-  padding: 0 16px;
+  padding: 0 18px;
   border: 0;
   border-radius: 999px;
-  background: var(--brand-primary);
+  background: var(--accent-cta);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 6px 14px rgba(255, 115, 138, 0.35);
+  box-shadow: 0 8px 16px rgba(255, 110, 134, 0.40);
   transition: background 140ms ease, box-shadow 140ms ease, transform 140ms ease;
 }
-.btn.primary:hover { background: var(--brand-primary-hover); }
+.btn.primary:hover { background: #E65D74; }
 .btn.primary:focus-visible { outline: 2px solid #FF738A66; outline-offset: 2px; }
+
+.btn.secondary {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid var(--divider);
+  background: #fff;
+  color: var(--text-primary);
+  cursor: pointer;
+}
 
 /* Modal */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(6,14,18,0.65);
+  background: rgba(6,14,18,0.35);
   display: grid;
   place-items: center;
   z-index: 10;
   padding: 20px;
 }
 .modal {
-  background: var(--surface-card);
+  background: var(--surface);
   border-radius: 12px;
   width: min(880px, 96vw);
   max-height: 90vh;
   overflow: auto;
-  box-shadow: 0 16px 32px rgba(0,0,0,0.35);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.20);
 }
 .modal .modal-media {
   width: 100%;
@@ -304,7 +326,7 @@ html, body, #root { height: 100%; }
   letter-spacing: 0.4px;
   color: var(--text-primary);
 }
-.modal .modal-meta { margin-bottom: 10px; }
+.modal .modal-meta { margin-bottom: 10px; color: var(--text-subtle); }
 .modal .modal-desc { color: var(--text-secondary); line-height: 1.58; font-size: 15px; }
 .modal .modal-actions {
   display: flex;
@@ -312,25 +334,19 @@ html, body, #root { height: 100%; }
   gap: 10px;
   margin-top: 18px;
 }
-.btn.secondary {
-  height: 40px;
-  padding: 0 14px;
-  border-radius: 10px;
-  border: 1px solid #e6ebf0;
-  background: #fff;
-  color: var(--text-primary);
-  cursor: pointer;
-}
 
 /* Stars */
 .star {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   display: inline-block;
-  color: var(--rating);
+  color: var(--star);
 }
 
 /* Responsive tweaks */
+@media (max-width: 1024px) {
+  .gallery { gap: 24px; }
+}
 @media (max-width: 768px) {
   .gallery { gap: 16px; }
   .modal .modal-media img { height: 260px; }

@@ -5,7 +5,7 @@ import RecipeCard from './RecipeCard';
 export default function RecipeGrid({ recipes = [], onSelect }) {
   /** Responsive gallery grid that renders RecipeCard items. */
   if (!recipes.length) {
-    return <p style={{ color: '#eaf5f6' }}>No recipes match your search.</p>;
+    return <p style={{ color: 'var(--text-secondary)' }}>No recipes match your search.</p>;
   }
   return (
     <section className="gallery" aria-live="polite">

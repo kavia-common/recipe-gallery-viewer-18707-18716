@@ -51,7 +51,7 @@ function App() {
         <div className="container">
           <div className="brand">
             <span className="brand-badge" aria-hidden="true">🍲</span>
-            <h1 className="brand-title">Recipe Gallery</h1>
+            <h1 className="brand-title" aria-label="Recipe Gallery application">Recipe Gallery</h1>
           </div>
           <SearchBar value={query} onChange={setQuery} />
         </div>
@@ -71,7 +71,7 @@ function App() {
       <RecipeModal recipe={selected} onClose={() => setSelected(null)} />
       <footer className="ocean-footer" role="contentinfo">
         <div className="container">
-          <p className="muted">Ocean Professional · Modern UI · Static demo</p>
+          <p className="muted" aria-label="Application footer note">Ocean Professional · Modern UI · Static demo</p>
         </div>
       </footer>
     </div>

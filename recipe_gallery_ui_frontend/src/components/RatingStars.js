@@ -9,9 +9,9 @@ function Star({ filled }) {
       focusable="false"
       fill={filled ? 'currentColor' : 'none'}
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.2"
     >
-      <path d="M12 3.8l2.47 5 5.52.8-4 3.9.94 5.5L12 16.8 7.07 19l.93-5.5-4-3.9 5.53-.8L12 3.8z" />
+      <path d="M12 3.2l2.6 5.2 5.7.8-4.1 4 1 5.9L12 16.9 6.8 19l1-5.9-4.1-4 5.7-.8L12 3.2z" />
     </svg>
   );
 }

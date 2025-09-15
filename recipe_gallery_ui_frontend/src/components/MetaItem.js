@@ -24,7 +24,7 @@ export default function MetaItem({ type, label }) {
   /** Icon + label compact meta element (time or serves). */
   return (
     <span className="meta-item">
-      <span aria-hidden="true" className="muted-icon" style={{ color: '#7B8594' }}>
+      <span aria-hidden="true" className="muted-icon" style={{ color: 'var(--text-subtle)' }}>
         {type === 'time' ? <IconTime /> : <IconServes />}
       </span>
       <span>{label}</span>
