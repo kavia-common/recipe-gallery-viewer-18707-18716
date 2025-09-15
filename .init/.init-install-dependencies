@@ -1,0 +1,4 @@
+{
+    "command": "npm install",
+    "working_directory": "/home/kavia/workspace/code-generation/recipe-gallery-viewer-18707-18716/recipe_gallery_ui_frontend"
+}
