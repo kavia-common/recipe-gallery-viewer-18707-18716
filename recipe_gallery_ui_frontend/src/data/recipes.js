@@ -64,8 +64,8 @@ const recipes = [
     description: 'Spring vegetables tossed with pasta and a light sauce.',
     longDescription:
       'A colorful mix of seasonal vegetables tossed with al dente pasta and a light, aromatic sauce.',
-    image: 'https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Pasta with colorful spring vegetables',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop', // Vibrant pasta primavera with lots of vegetables
+    alt: 'Pasta Primavera with colorful vegetables',
   },
 ];
 
